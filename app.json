@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ranting-violet-milkshake",
+    "name": "MCP",
     "slug": "snack-20688d4a-3587-4238-835f-942aa5d9afa1",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": true

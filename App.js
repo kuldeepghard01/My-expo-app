@@ -36,6 +36,8 @@ export default function App() {
   const [winnerLogs, setWinnerLogs] = useState([]);
   const [privateRooms, setPrivateRooms] = useState([]);
 
+  const [showSplash, setShowSplash] = useState(true);
+  
   const [notifications, setNotifications] = useState([
     { title: '🎉 Welcome to MCP Fantasy', message: 'Predict Day 1 Box Office & Win Real Cash!', date: 'Today' }
   ]);
@@ -75,6 +77,18 @@ export default function App() {
 
   useEffect(() => { fetchMovies(); fetchLeaderboard(); }, []);
 
+useEffect(() => {
+  fetchMovies();
+  fetchLeaderboard();
+
+  const timer = setTimeout(() => {
+    setShowSplash(false);
+  }, 2500);
+
+  return () => clearTimeout(timer);
+}, []);
+  
+  
   const handleSendOtp = () => {
     if (!userName.trim() || !phoneNumber || phoneNumber.length < 10) return alert('Enter valid Name and Phone.');
     setOtpSent(true);
@@ -239,7 +253,23 @@ export default function App() {
       </SafeAreaView>
     );
   }
-    return (
+  
+
+if (showSplash) {
+  return (
+    <View style={{ flex: 1, backgroundColor: '#000000', justifyContent: 'center', alignItems: 'center' }}>
+      <Image 
+        source={require('./assets/icon.png')} 
+        style={{ width: 140, height: 140, borderRadius: 70, marginBottom: 20 }} 
+      />
+      <Text style={{ color: '#FFD700', fontSize: 32, fontWeight: 'bold', letterSpacing: 2 }}>MCP</Text>
+      <Text style={{ color: '#FFFFFF', fontSize: 16, marginTop: 8, opacity: 0.9 }}>Movie Collection Prediction</Text>
+    </View>
+  );
+}
+
+
+return (
     <SafeAreaView style={styles.container}>
       <DisclaimerModal visible={showDisclaimer} onAgree={() => { setHasAgreedDisclaimer(true); setShowDisclaimer(false); }} />
 

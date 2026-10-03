@@ -33,6 +33,9 @@
         "projectId": "b52f2cac-89ee-4a12-b949-cd7ea014bad9"
       }
     },
-    "owner": "kd_01"
+    "owner": "kd_01",
+    "plugins": [
+      "expo-build-properties"
+    ]
   }
 }

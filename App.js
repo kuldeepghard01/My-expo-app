@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList, Image, TouchableOpacity, SafeAreaView, TextInput, Linking } from 'react-native';
 import { styles } from './styles';
 import Admin from './Admin';
-import { 
-  MovieDetailModal, 
-  PrivateRoomModal, 
-  PredictModal, 
-  LeaderboardModal, 
-  NotificationsModal, 
-  SettingsModal, 
-  DisclaimerModal, 
-  WalletModal 
-} from './Modals';
+
 import { SUPABASE_URL, ADMIN_PHONE, getHeaders, isContestLocked } from './constants';
 
 export default function App() {

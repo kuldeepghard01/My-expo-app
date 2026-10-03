@@ -1,3 +1,13 @@
+const setTimeout = global.setTimeout;
+const clearTimeout = global.clearTimeout;
+const DisclaimerModal = () => null;
+const MovieDetailModal = () => null;
+const PrivateRoomModal = () => null;
+const PredictModal = () => null;
+const WalletModal = () => null;
+const LeaderboardModal = () => null;
+const NotificationsModal = () => null;
+const SettingsModal = () => null;
 import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList, Image, TouchableOpacity, SafeAreaView, TextInput, Linking } from 'react-native';
 import { styles } from './styles';
